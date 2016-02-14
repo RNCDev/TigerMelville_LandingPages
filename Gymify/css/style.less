@@ -1,0 +1,1756 @@
+/*=======================================================================================
+
+Template Name: ROOF - Responsive Landing Page Template
+Version: 1.0
+Author: ronseta
+Email: rsetiyawan5@gmail.com
+Website: http://ronseta.com
+
+----------------------------------------------------------------
+
+[Table of contents]
+
+1. Reset css
+2. Preload
+3. Navigation
+4.  ~ Banner 01
+    ~ Banner 02
+    ~ Banner 03
+----------------
+5.  ~ About 01
+    ~ About 02
+    ~ About 03
+----------------
+6.  ~ Feature 01
+    ~ Feature 02
+    ~ Feature 03
+    ~ Feature 04
+    ~ Feature 05
+    ~ Feature 06
+    ~ Feature 07
+    ~ Feature 08
+    ~ Feature 09
+    ~ Feature 10
+----------------
+7. Intro
+8.  ~ Screenshot 01
+    ~ Screenshot 02
+----------------
+9. Support
+10. ~ Quote 01
+    ~ Quote 02
+    ~ Quote 03
+----------------
+11. Subscribe Form / Contact Form
+12. ~ Footer 01
+    ~ Fotter 02
+    ~ Fotter 03
+----------------
+13. Pop up Messages
+14. Media Qwery
+
+
+========================================================================================*/
+
+
+/*--------------- RESET ------------------*/
+html,body,div,span,ifreme,object,
+h1,h2,h3,h4,h5,h6,p,blockquot,pre,
+a,abbr,addres,big,cite,code,
+del,em,img,ins,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,lable,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,embed,
+figure,figcaption,footer,header,hgroup,
+menu,nav,output,ruby,section,summary,
+time,mark,audio,video {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+}
+
+input{
+	margin:0;
+	padding:0;
+}
+
+ul,li,ol{
+	list-style-type:none;
+}
+input, textarea{
+	outline:none;
+}
+/*--------------- END RESET ------------------*/
+
+
+/*GENERAL*/
+@font1: open sans;
+@font2: roboto;
+@font3: droid serif;
+
+@dark: #40434b;
+@soft: #8e8e8e;
+
+a{
+    text-decoration: none;
+    
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;    
+    
+    &:hover{
+        text-decoration: none;
+        
+        transition: all 0.3s ease-in-out;
+        webkit-transition: all 0.3s ease-in-out;
+        moz-transition: all 0.3s ease-in-out;
+        o-transition: all 0.3s ease-in-out;
+    }
+}
+
+body{
+    font-family: @font1;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+hr{
+    max-width: 500px;
+    margin: 0 auto;
+    background: @soft;
+}
+
+/*=========================================================================
+LOADING
+===========================================================================*/
+.roof-loading{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 99999999;
+    background: url(../images/loading.gif) top 60px center no-repeat;
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
+
+
+/*=========================================================================
+NAVIGATION
+===========================================================================*/
+.roof-nav{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    width: 300px;
+    background: lighten(@soft,42%);
+    height: 100%;
+    z-index: 999;
+    overflow-y: auto;
+    
+    transition: all 0.3s ease-out;
+    webkit-transition: all 0.3s ease-out;
+    moz-transition: all 0.3s ease-out;
+    o-transition: all 0.3s ease-out;     
+    
+    transform: translateX(-100%);
+    moz-transform: translateX(-100%);
+    webkit-transform: translateX(-100%);
+    o-transform: translateX(-100%);
+    
+    .close-btn{
+        float: right;
+        margin: 1em;
+        opacity: 0.7;
+        color: white;
+        font-size: 16pt;
+        cursor: pointer;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+    .roof-cover{
+        background: url(../images/bg/02-roof-image.png);
+        background-size: cover;
+        
+        .roof-cover-content{
+            height: 200px;
+            width: 100%;            
+        }
+    }
+    
+    ul{
+        padding: 0 15px;
+        
+        li{
+            text-transform: uppercase;
+            border-bottom: 1px solid lighten(@soft,35%);
+            border-radius: 5px;
+            margin-top: 8px;
+            padding: 15px 20px;
+            
+            transition: all 0.3s ease-in-out;
+            webkit-transition: all 0.3s ease-in-out;
+            moz-transition: all 0.3s ease-in-out;
+            o-transition: all 0.3s ease-in-out;              
+            
+            a{
+                color: @soft;
+                font-size: 10pt;
+            }
+            span{
+                float: right;
+                line-height: 24px;
+            }
+        }
+    }
+    .cover-nav{
+        z-index: 99999999;
+        width: 100%;
+        background: lighten(@soft,42%);
+    }
+}
+
+.roof-nav-active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
+    moz-transform: translateX(0%);
+    webkit-transform: translateX(0%);
+    o-transform: translateX(0%);
+}
+
+.roof-nav-screen{
+    background: black;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    opacity: 0.0;
+    visibility: hidden;
+    z-index: 99;
+    
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;     
+}
+.roof-screen-on{
+    opacity: 0.3;
+    visibility: visible;
+}
+
+.roof-nav-logo{
+    position: fixed;
+    z-index: 999999;
+    padding: 1em 2em;
+    width: 40px;
+    height: 40px;
+    
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;     
+}
+
+.roof-nav-btn{
+    width: 100%;
+    position: fixed;
+    color: white;
+    padding: 1em 2em;
+    z-index: 99;
+    
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;     
+    
+    .nav-btn{
+        opacity: 0.8;
+        
+        ul{
+            margin-left: 80px;
+            margin-top: 10px;
+            
+            li{
+                font-size: 11pt;
+                cursor: pointer;
+                display: inline-block;
+            }
+        }
+        
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
+.roof-nav-scroll{
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out; 
+}
+
+
+/*=========================================================================
+ROOF BANNER 01
+===========================================================================*/
+.roof-banner-01{
+    background: url(../images/bg/01-roof-image.png);
+    background-size: cover;
+    overflow: hidden;
+    
+    .roof-banner-content{
+        color: white;
+        min-height: 700px;
+        
+        h1{
+            margin-top: 5em;
+            line-height: 40px;
+            font-size: 30pt;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            margin: 2em 0;
+            font-size: 11pt;
+        }
+        h3{
+            margin: 1em 0;
+            font-size: 16pt;
+            line-height: 30px;
+        }        
+        h2{
+            font-size: 21pt;
+            
+            .cross{
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+        }
+        .roof-btn{
+            background: white;
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            border: solid 2px white;
+            line-height: 5em;
+            
+            &:hover{
+                background: none;
+                color: white;
+            }
+        }
+        
+        .roof-img-phone{
+            margin: auto;
+            margin-top: 6em;
+            margin-bottom: 2em;
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF BANNER 02
+===========================================================================*/
+.roof-02-home{
+    text-align: center;
+    color: white;
+    background: url(../images/bg/03-roof-image.png);
+    background-size: cover;
+    
+    .roof-banner-content{
+        padding-top: 6em;
+        
+        img{
+            margin: auto;
+        }
+        h1{
+            font-size: 30pt;
+            line-height: 40px;
+            margin-top: 1em;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            max-width: 550px;
+            margin: auto;
+            padding: 0 10px;
+            margin-top: 1em;
+            font-size: 11pt;
+        }
+        .phone{
+            margin-top: 4em;
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF BANNER 03
+===========================================================================*/
+.roof-03-home{
+    background: url(../images/bg/01-roof-image.png);
+    background-size: cover;
+    
+    .roof-banner-content{
+        padding: 5em 0;
+        padding-top: 7em;
+        color: white;
+        text-align: center;
+        img{
+            margin: auto;
+        }
+        
+        h1{
+            font-size: 30pt;
+            line-height: 40px;
+            margin-top: 1em;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            max-width: 550px;
+            margin: auto;
+            padding: 0 10px;
+            margin-top: 1em;
+            font-size: 12pt;
+            font-family: @font3;
+            font-style: italic;
+        } 
+        .line{
+            margin: auto;
+            margin-top: 1em;
+            width: 1px;
+            background: white;
+            height: 50px;
+        }
+        .roof-btn{
+            background: white;
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            border: solid 2px white;
+            line-height: 5em;
+            
+            &:hover{
+                background: none;
+                color: white;
+            }
+        }        
+    }
+    
+    .roof-banner-brand{
+        padding: 1em 0;
+        img{
+            margin: 1em auto;
+        }
+    }
+}
+
+
+/*=========================================================================
+ROOF ABOUT 01
+===========================================================================*/
+.roof-01-about{
+    background: url(../images/bg/04-roof-image.png);
+    background-size: cover;
+    
+    .about-content{
+        background: rgba(64, 67, 75, 0.7);
+        color: white;
+        padding: 3em 0;
+        
+        h1{
+            text-transform: uppercase;
+            font-size: 21pt;
+            margin: 20px 0;
+            
+            b{
+                font-weight: bold;
+            }
+        }
+        
+        p{
+            font-size: 11pt;
+            margin: 20px 0;
+        }
+        i{
+            font-style: italic;
+            font-family: @font3;
+            max-width: 500px;
+            font-size: 12pt;
+            margin: 20px 0;
+            letter-spacing: 0;
+            max-width: 500px;
+            line-height: 30px;
+        }
+    }
+        .roof-btn{
+            background: white;
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            border: solid 2px white;
+            line-height: 5em;
+            color: @dark;
+            
+            &:hover{
+                background: none;
+                color: white;
+            }
+        }    
+}
+
+
+
+/*=========================================================================
+ROOF ABOUT 02
+===========================================================================*/
+.roof-02-about{
+    padding: 0;
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .col-lg-6, .col-md-6{
+        padding: 0;
+    }
+    .cover-about{
+        background: url(../images/bg/01-roof-image.png);
+        background-size: cover;
+    }
+    .cover-overlay{
+        padding: 7em 0;
+        text-align: center;
+        color: white;
+        img{
+            margin: auto;
+        }
+        p{
+            font-family: @font3;
+            font-style: italic;
+            max-width: 400px;
+            margin: 1em auto;
+            font-size: 11pt;
+        }
+        h2{
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+    }
+    .content-about{
+        padding: 5em 3em;
+        color: @soft;
+        h2{
+            font-size: 16pt;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            font-size: 11pt;
+            padding: 2em 0;
+        }
+        i{
+            font-size: 12pt;
+            font-family: @font3;
+            font-style: italic;
+            letter-spacing: 0;
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF ABOUT 03
+===========================================================================*/
+.roof-03-about{
+    padding: 0;
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .col-lg-6, .col-md-6{
+        padding: 0;
+    }
+    .cover-about{
+        background: url(../images/bg/02-roof-image.png);
+        background-size: cover;
+    }
+    .cover-overlay{
+        padding: 4em 0;
+        text-align: center;
+        color: white;
+        img{
+            margin: auto;
+        }
+        p{
+            font-family: @font3;
+            font-style: italic;
+            max-width: 400px;
+            margin: 1em auto;
+            font-size: 11pt;
+        }
+        h2{
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+    }
+    .content-about{
+        padding: 5em 3em;
+        color: @soft;
+        h2{
+            font-size: 16pt;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            font-size: 11pt;
+            padding: 10px 0;
+        }
+        h3{
+            font-size: 12pt;
+            margin-top: 20px;
+            b{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 01
+===========================================================================*/
+.roof-01-feature{
+    padding: 5em 0;
+    
+    .circle{
+        height: 80px;
+        max-width: 80px;
+        border-radius: 100%;
+        border: 2px solid @soft;
+        text-align: center;
+        margin: auto;
+        
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;         
+        
+        span{
+            font-size: 24pt;
+            color: @soft;
+            line-height: 80px;
+            
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;             
+        }
+    }
+    .title{
+        text-transform: uppercase;
+        color: @soft;
+        font-size: 10pt;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+        letter-spacing: 0;
+    }
+    
+    h2{
+        font-size: 18pt;
+        color: @soft;
+        margin-top: 20px;
+        
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 11pt;
+        margin-top: 20px;
+        color: @soft;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 02
+===========================================================================*/
+.roof-02-feature{
+    padding: 5em 0;
+    
+    .circle{
+        height: 80px;
+        max-width: 80px;
+        border-radius: 100%;
+        border: 2px solid @soft;
+        text-align: center;
+        margin: auto;
+        
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;         
+        
+        span{
+            font-size: 24pt;
+            color: @soft;
+            line-height: 80px;
+            
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;             
+        }
+    }
+    .title{
+        text-transform: uppercase;
+        color: @soft;
+        font-size: 10pt;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+        letter-spacing: 0;
+    }
+    
+    h2{
+        font-size: 18pt;
+        color: @soft;
+        margin-top: 20px;
+        
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 11pt;
+        margin-top: 20px;
+        color: @soft;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 03
+===========================================================================*/
+.roof-03-feature{
+    background: url(../images/bg/03-roof-image.png);
+    background-size: cover;
+    
+    .content-feature{
+        text-align: center;
+        color: white;
+        padding: 5em 0;
+        
+        h1{
+            font-size: 24pt;
+            line-height: 40px;
+            
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            max-width: 600px;
+            margin: 2em auto;
+            font-size: 11pt;
+        }
+        h2{
+            font-size: 21pt;
+            
+            .cross{
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+        }        
+        .roof-btn{
+            background: white;
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            border: solid 2px white;
+            line-height: 5em;
+            
+            &:hover{
+                background: none;
+                color: white;
+            }
+        }      
+        img{
+            margin: auto;
+            margin-top: 3em;
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 04
+===========================================================================*/
+.roof-04-feature{
+    padding: 5em 0;
+    color: @soft;
+    text-align: center;
+    
+    h1{
+        font-size: 24pt;
+        line-height: 40px;
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 11pt;
+        max-width: 650px;
+        margin: auto;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    .circle-sm{
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        border: 3px solid @soft;
+        border-radius: 100%;
+        margin-top: 1.5em;
+        
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;          
+        
+        span{
+            font-size: 24pt;
+            line-height: 100px;
+            
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;              
+        }
+    }
+    .circle-lg{
+        width: 130px;
+        height: 130px;
+        margin: auto;
+        border: 3px solid @soft;
+        border-radius: 100%;
+        margin-top: 1.5em;
+        
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;          
+        
+        span{
+            font-size: 30pt;
+            line-height: 130px;
+            
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;              
+        }
+    }    
+    h2{
+        text-transform: uppercase;
+        font-size: 10pt;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .container{
+        max-width: 600px;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 05
+===========================================================================*/
+.roof-05-feature{
+    padding: 5em 0;
+    background: lighten(@soft,40%);
+    color: @soft;
+    img{
+        margin: auto;
+    }
+    h3{
+        font-size: 14pt;
+        line-height: 40px;
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 11pt;
+    }
+    .content-feature{
+        margin: 4em 0;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 06
+===========================================================================*/
+.roof-06-feature{
+    padding: 4em 0;
+    color: @soft;
+    
+    img{
+        margin: 1em auto;
+    }
+    
+    h2{
+        font-size: 18pt;
+        line-height: 40px;
+        b{
+            font-weight: bold;
+        }
+        margin: 1em 0;
+    }
+    p{
+        font-size: 11pt;
+        line-height: 24px;
+        margin: 1em 0;
+    }
+    i{
+        font-style: italic;
+        font-family: @font3;
+        font-size: 12pt;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 07
+===========================================================================*/
+.roof-07-feature{
+    padding-top: 3em;
+    padding-bottom: 5em;
+    background: lighten(@soft,40%);
+    color: @soft;
+    b{
+        font-weight: bold;
+    }
+    
+    h2{
+        font-size: 16pt;
+        margin: .5em 0;
+        margin-top: 2em;
+    }
+    p{
+        font-size: 11pt;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 08
+===========================================================================*/
+.roof-08-feature{
+    background: url(../images/bg/03-roof-image.png);
+    background-size: cover;
+    
+    .content-feature{
+        padding-top: 3em;
+        color: white;
+        
+        img{
+            margin: auto;
+        }
+        h2{
+            font-size: 18pt;
+            line-height: 40px;
+            margin-top: 1em;
+            b{
+                font-weight: bold;
+            }
+        }
+        p{
+            font-size: 11pt;
+            margin: 1em 0;
+        }
+        h3{
+            font-size: 14pt;
+            b{
+                font-weight: bold;
+            }
+        }
+        .col-sm-6{
+            padding: 0;
+            margin-top: 2em;
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 09
+===========================================================================*/
+.roof-09-feature{
+    padding: 4em 0;
+    background: lighten(@soft,40%);        
+    
+    .base-sm{
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 3em 2em;
+        border-radius: 8px;
+        margin: 2em 0;
+        h3{
+            font-size: 50pt;
+            margin-bottom: .5em;
+        }
+        h2{
+            font-size: 14pt;
+            b{font-weight: bold;}
+        }
+        p{
+            font-size: 10pt;
+            font-family: @font3;
+            font-style: italic;
+            margin: 10px auto;
+            letter-spacing: normal;
+        }
+        .roof-btn{
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            
+            &:hover{
+                background: none;
+            }
+        }        
+    }
+    
+    .base-lg{
+        width: 100%;
+        text-align: center;
+        padding: 4em 2em;
+        border-radius: 8px;
+        h3{
+            font-size: 50pt;
+            margin-bottom: .5em;
+        }
+        h2{
+            font-size: 14pt;
+            b{font-weight: bold;}
+        }
+        p{
+            font-size: 10pt;
+            font-family: @font3;
+            font-style: italic;
+            margin: 10px auto;
+            letter-spacing: normal;
+        }
+        .roof-btn{
+            padding: 8px 50px;
+            font-size: 16pt;
+            border-radius: 5px;
+            
+            &:hover{
+                background: none;
+            }
+        }        
+    }    
+}
+
+
+
+/*=========================================================================
+ROOF FEATURE 10
+===========================================================================*/
+.roof-10-feature{
+    padding: 5em 0;
+    background: @dark;
+    color: white;
+    
+    h2{
+        b{font-weight: bold;}
+        font-size: 18pt;
+        margin-bottom: 1em;
+    }
+    p{
+        margin: 10px 0;
+        font-size: 11pt;
+    }
+    .roof-btn{
+        padding: 8px 50px;
+        font-size: 16pt;
+        border-radius: 5px;
+        border: 2px solid white;
+        background: white;
+        color: @dark;
+
+        &:hover{
+            background: none;
+            color: white;
+        }
+    }
+    img{
+        margin: 20px auto;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF INTRO 01
+===========================================================================*/
+.roof-01-intro{
+    background: url(../images/bg/03-roof-image.png);
+    background-size: cover;
+    .content-intro{
+        padding: 8em 0;
+        background: rgba(64, 67, 75, 0.9);
+        ul{
+            text-align: center;
+            li{
+                display: inline;
+                a{
+                    color: white;
+                    padding: 1em;
+                    margin: 2em auto;
+                    border: 2px solid white;
+                    border-radius: 8px;
+                    font-size: 14pt;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF SS 01
+===========================================================================*/
+.roof-01-ss{
+    padding: 5em 0;
+    
+    .item{
+        text-align: center;
+        padding: 0 10px;
+        
+        img{
+            max-width: 100%;
+            border: 5px solid lighten(@soft,23%);
+            border-radius: 5px;
+        }
+    }
+    .owl-pagination{
+        opacity: 0.3;
+        .owl-page{
+            span{
+                border-radius: 0;
+                width: 30px;
+                height: 5px;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF SS 02
+===========================================================================*/
+.roof-02-ss{
+    background: lighten(@soft,35%);
+    padding: 7em 0;
+    
+    .item{
+        text-align: center;
+        
+        img{
+            max-width: 100%;
+        }
+    }
+    .owl-pagination{
+        opacity: 0.3;
+        .owl-page{
+            span{
+                border-radius: 0;
+                width: 30px;
+                height: 5px;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+        }
+    }    
+}
+
+
+
+/*=========================================================================
+ROOF SUPPORT 01
+===========================================================================*/
+.roof-01-support{
+    padding: 4em 0;
+    
+    h2{
+        text-align: center;
+        font-size: 18pt;
+        color: @soft;
+        margin-bottom: 3em;
+        b{
+            font-weight: bold;
+        }
+    }
+    img{
+        margin: auto;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF QUOTE 01
+===========================================================================*/
+.roof-01-quote{
+    padding: 1em 0;
+    
+    .item{
+        padding: 3em 0;
+        text-align: center;
+        
+        .avatar{
+            img{
+                max-width: 100px;
+                margin: auto;
+            }
+        }
+        .name{
+            font-size: 10pt;
+            padding: 20px;
+            color: @soft;
+            letter-spacing: 0;
+        }
+        .txt{
+            max-width: 700px;
+            line-height: 30px;
+            margin: auto;
+            font-family: @font3;
+            letter-spacing: 0;
+            font-style: italic;
+            color: @soft;
+            font-size: 16pt;
+        }
+    }
+    .owl-pagination{
+        opacity: 0.3;
+        .owl-page{
+            span{
+                border-radius: 0;
+                width: 30px;
+                height: 5px;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+        }
+    }    
+}
+
+
+
+/*=========================================================================
+ROOF QUOTE 02
+===========================================================================*/
+.roof-02-quote{
+    background: url(../images/bg/02-roof-image.png);
+    background-size: cover;
+    
+    .content-quote{
+        padding: 8em 0;
+        text-align: center;
+        color: white;
+        background: rgba(64, 67, 75, 0.9);
+        
+        p{
+            font-family: @font3;
+            font-style: italic;
+            font-size: 16pt;
+            max-width: 700px;
+            margin: auto;
+            line-height: 30px;
+        }
+    }
+    .owl-pagination{
+        opacity: 0.3;
+        .owl-page{
+            span{
+                border-radius: 0;
+                width: 30px;
+                height: 5px;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+        }
+    }     
+}
+
+
+
+/*=========================================================================
+ROOF QUOTE 03
+===========================================================================*/
+.roof-03-quote{
+    padding: 3em;
+    width: 100%;
+    
+    .item{
+        padding: 3em 0;
+        margin: auto;
+        padding-bottom: 1em;
+        margin: 0 10px;
+        
+        .name{
+            font-size: 10pt;
+            padding: 20px 0;
+            font-family: @font3;
+            font-style: italic;
+            letter-spacing: 0;
+        }
+        .txt{
+            max-width: 600px;
+            line-height: 30px;
+            font-family: @font3;
+            letter-spacing: 0;
+            font-style: italic;
+            color: @soft;
+            font-size: 14pt;
+        }
+    }
+    .owl-pagination{
+        opacity: 0.3;
+        .owl-page{
+            span{
+                border-radius: 0;
+                width: 30px;
+                height: 5px;
+                border-radius: 5px;
+            }
+        }
+    }    
+}
+
+
+
+/*=========================================================================
+ROOF SUB 01
+===========================================================================*/
+.roof-01-sub{
+    text-align: center;
+    padding: 4em 0;
+    color: @soft;
+    
+    h1{
+        font-size: 18pt;
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 10pt;
+        padding: 1em;
+    }
+    .roof-form-group{
+        max-width: 600px;
+        margin: auto;
+        padding: 1em;
+        .roof-form{
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: url(../images/envelope.png) no-repeat center right 20px lighten(@soft,40%);
+            border: none;
+            border-radius: 5px;
+            font-family: @font3;
+            font-style: italic;
+            font-size: 10pt;
+            letter-spacing: 2px;
+            border: 2px solid lighten(@soft,40%);
+            
+            &:focus{
+                border: 2px solid @soft;
+            }
+        }        
+    }
+}
+
+
+
+/*=========================================================================
+ROOF CONTACT 01
+===========================================================================*/
+.roof-01-contact{
+    text-align: center;
+    padding: 4em 0;
+    color: @soft;
+    
+    h1{
+        font-size: 18pt;
+        b{
+            font-weight: bold;
+        }
+    }
+    p{
+        font-size: 10pt;
+        padding: 1em;
+    }
+    .roof-form-group{
+        max-width: 600px;
+        margin: auto;
+        padding: 1em;
+        .roof-form{
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: lighten(@soft,40%);
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-family: @font3;
+            font-style: italic;
+            font-size: 10pt;
+            letter-spacing: 2px;
+            border: 2px solid lighten(@soft,40%);
+            
+            &:focus{
+                border: 2px solid @soft;
+            }
+        }        
+    }
+    .roof-form-btn{
+        width: 100%;
+        padding: 15px 50px 15px 20px;
+        background: @dark;
+        border: 2px solid @dark;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-family: @font3;
+        font-size: 10pt;
+        letter-spacing: 2px;
+        
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;            
+        
+        &:hover{
+            border-color: @dark;
+            color: @dark;
+            background: lighten(@soft,40%);
+            
+    transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;                
+        }
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FOOTER 01
+===========================================================================*/
+.roof-01-footer{
+    background: lighten(@soft,40%);
+    color: @soft;
+    text-align: center;
+    padding: 4em 0;
+    
+    h1{
+        font-size: 18pt;
+        b{font-weight: bold;}
+    }
+    p{
+        max-width: 700px;
+        margin: auto;
+        padding: 2em 10px;
+        font-size: 11pt;
+    }
+    .roof-btn{
+        background: @soft;
+        padding: 8px 50px;
+        font-size: 16pt;
+        border-radius: 5px;
+        border: solid 2px @soft;
+        line-height: 5em;
+        color: white;
+
+        &:hover{
+            background: none;
+            color: @soft;
+        }
+    }
+    ul{
+        padding: 3em 0;
+        li{
+            display: inline;
+            a{
+                font-size: 18pt;
+                margin: 10px 20px;
+                color: @soft;
+            }
+        }
+    }
+    hr{
+        height: 1px;
+        opacity: 0.3;
+    }
+    .cr{
+        text-transform: uppercase;
+        padding-top: 3em;
+        padding-bottom: 0;
+        font-size: 10pt;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FOOTER 02
+===========================================================================*/
+.roof-02-footer{
+    padding: 3em 0;
+    background: @dark;
+    text-align: center;
+    
+    ul li{
+        display: inline-block;
+        a{
+            margin: 20px;
+            color: @soft;
+            font-size: 16pt;
+        }
+    }
+    p{
+        text-transform: uppercase;
+        font-size: 10pt;
+        color: @soft;
+        margin-top: 2em;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF FOOTER 03
+===========================================================================*/
+.roof-03-footer{
+    padding: 3em 0;
+    background: @dark;
+    text-align: center;
+    
+    ul li{
+        display: inline-block;
+        a{
+            margin: 0 20px;
+            color: @soft;
+            font-size: 16pt;
+        }
+    }
+    p{
+        text-transform: uppercase;
+        font-size: 10pt;
+        color: @soft;
+    }
+}
+
+
+
+/*=========================================================================
+ROOF POPUP MESSAGE
+===========================================================================*/
+.roof-hide-msg{
+    transform: translateY(100%);
+}
+
+.roof-hide-subs{
+    transform: translateY(100%);
+}
+
+.roof-msg{
+    margin: 0 1em;
+    position: fixed;
+    font-size: 10pt;
+    text-align: center;
+    max-width: 500px;
+    z-index: 999999999;
+    background: #2be479;
+    padding: 2em;
+    bottom: 0;
+    font-family: @font1;
+    color: white;
+    
+    transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    
+    span{
+        padding-left: 1em;
+    }
+    a{color: white;}
+}
+
+.roof-subs{
+    margin: 0 1em;
+    position: fixed;
+    font-size: 10pt;
+    text-align: center;
+    max-width: 500px;
+    z-index: 999999999;
+    background: #2be479;
+    padding: 2em;
+    bottom: 0;
+    font-family: @font1;
+    color: white;
+    
+    transition: all 0.3s ease-in-out;
+    o-transition: all 0.3s ease-in-out;
+    webkit-transition: all 0.3s ease-in-out;
+    moz-transition: all 0.3s ease-in-out;
+    
+    span{
+        padding-left: 1em;
+    }
+    a{color: white;}
+}
+
+
+
+
+/*=========================================================================
+MEDIA QWERY
+===========================================================================*/
+
+@media (max-width: 992px) {
+    
+    .roof-img-phone{
+        display: none;
+    }
+    .roof-banner-01, .roof-05-feature{
+        text-align: center;
+    }
+    .roof-05-feature{
+        padding: 1em 0;
+    }
+    .roof-banner-01 .roof-banner-content h1{
+        margin-top: 6em;
+        font-size: 24pt;
+    }
+    .roof-02-home .roof-banner-content h1{
+        font-size: 24pt;
+    }
+    .roof-03-home .roof-banner-content h1{
+        font-size: 24pt;
+    }    
+    .roof-01-footer h1, .roof-01-sub h1{
+        font-size: 16pt;
+    }
+    .roof-nav-btn{
+        padding: 1em 2em;
+    }
+    .roof-nav-btn .nav-btn ul{
+        margin-left: 50px;
+    }     
+    .nav-btn ul li p{
+        display: none;
+    }   
+    .roof-02-about .content-about{
+        padding: 3em 1em;
+    }
+    .roof-03-about .content-about{
+        padding: 3em 1em;
+    }    
+    .roof-10-feature{
+        text-align: center;
+    }
+    .content-brand{
+        margin-top: 5em;
+    }
+    .phone-left{
+        display: none;
+    }
+    .roof-08-feature .content-feature{
+        padding-bottom: 3em;
+    }
+    
+}
+
+
+
+
+@media (max-width: 768px) {
+    
+    .roof-01-feature .circle{
+        max-width: 150px;
+        border-radius: 5px;
+    }
+    .roof-01-feature{
+        text-align: center;
+    }    
+    .roof-01-feature .circle span{
+        font-size: 20pt;
+    }
+    .roof-01-feature .title{
+        display: none;
+    }
+    .roof-01-feature h2{
+        margin-top: 150px;
+    }
+    
+    .roof-02-feature .circle{
+        max-width: 150px;
+        border-radius: 5px;
+        margin-top: 50px;
+    }
+    .roof-02-feature{
+        text-align: center;
+    }    
+    .roof-02-feature .circle span{
+        font-size: 20pt;
+    }
+    .roof-02-feature .title{
+        display: none;
+    }
+    .roof-01-intro .content-intro{
+        padding: 5em 0;
+    }    
+    
+}
+
