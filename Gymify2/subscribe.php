@@ -1,23 +1,32 @@
 <?php
-$email_address = $_POST['sub'];
+$field_name = $_POST['name'];
+$field_email = $_POST['email'];
+$field_message = $_POST['message'];
 
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-$email_address))
+$mail_to = 'info@trygymify.com';
+$subject = 'Message from Gymify website '.$field_email;
 
-if( empty($errors))
-{
-	$to = 'info@trygymify.com';
-	$email_subject = "Gymify";
-	$email_body = "You have received a new Subscribe. ".
-	" Here are the details:\n Email: $email_address";
+$body_message .= 'Name: '.$field_name."\n";
+$body_message .= 'E-mail: '.$field_email."\n";
+$body_message .= 'Message: '.$field_message."\n";
 
-	$headers = "From: $to\n";
-	$headers .= "Reply-To: $email_address";
+$headers = 'From: '.$field_email."\r\n";
+$headers .= 'Reply-To: '.$field_email."\r\n";
 
-	mail($to,$email_subject,$email_body,$headers);
-	//redirect to the 'thank you' page
-	header('Location: thanks.html');
+$mail_status = mail($mail_to, $subject, $body_message, $headers);
+
+if ($mail_status) { ?>
+	<script language="javascript" type="text/javascript">
+		alert('Thank you for the message.');
+		window.location = 'index.html';
+	</script>
+<?php
 }
-
+else { ?>
+	<script language="javascript" type="text/javascript">
+		alert('Message failed.');
+		window.location = 'index.html';
+	</script>
+<?php
+}
 ?>
