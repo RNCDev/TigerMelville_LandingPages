@@ -1,2 +1,2 @@
-# EventCastLandingPage
-EventCast Landing Page
+# EventCast Download Page
+EventCast Download Page
