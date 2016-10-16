@@ -356,7 +356,7 @@ h6{
 #intro{
 	width:100%;
 	z-index:1;
-	background: url('../images/lp_background.jpg');
+	background: url('../images/sunset_background.jpg');
 	background-position: center top;
     background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -458,7 +458,7 @@ p.copyright{
 	width:100%;
 	position:relative;
 	z-index:100;
-	padding:150px 0 210px 0;
+	padding:90px 0 210px 0;
 }
 
 .home_box{
@@ -476,14 +476,14 @@ span.home_text1{
 	letter-spacing: 1.5px;
 	text-align: center;
 	color: #fff;
-	margin-bottom: 20px;
+	margin-bottom: 80px;
 	clear: both;
 	display: block;
 }
 
 span.home_text2{
 	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+	font-weight: bold;
 	font-size: 22px;
 	line-height: 32px;
 	color: #fff;
@@ -565,7 +565,7 @@ a.home_text3:hover{
 .callbacks_nav {
 	display:none;
 }
-  
+
 .rslides {
 	position: relative;
 	list-style: none;
@@ -1214,23 +1214,24 @@ span.nospam{
 		padding-top: 10px;
 		padding-bottom: 40px;
 	}
-	
+
 	.home_box{
 		width:100%;
 		max-width:480px;
 		margin:0 auto;
 	}
-		
+
 	span.home_text1{
 		font-size:18px;
 		line-height:22px;
 	}
-	
+
 	span.home_text2{
 		font-size:14px;
 		line-height:18px;
+    font-weight: bold;
 	}
-	
+
 	a.home_text3{
 		height: 26px;
 		padding: 0 15px;
