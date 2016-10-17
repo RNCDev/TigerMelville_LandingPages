@@ -765,6 +765,11 @@ span.features_title_small{
 	-webkit-transition: all .50s ease-in-out;
 }
 
+#video iframe {
+  width: 560px;
+  height: 315px;
+}
+
 /* ========================================================== */
 /* 		     	  		     Newsletter                       */
 /* ========================================================== */
@@ -1392,27 +1397,32 @@ span.nospam{
 		margin:0 auto;
 		text-align:center;
 	}
-	
+
 	.portfolio_title h2 {
 		padding:50px 0;
 		font-size: 18px;
 		line-height: 26px;
 	}
-		
+
 	.services_box{
 		padding:50px 0 10px 0;
 	}
-	
+
 	.padding_top_large{
 		padding-top:0;
-	}	
-	
+	}
+
+  #video iframe {
+    width: auto;
+    height: auto;
+  }
+
 }
-	
+
 /* =============================================================================
    Print Styles
    ========================================================================== */
-	 
+
 	@media print {
 		* {background: transparent !important; color: #000 !important; /* Black prints faster: h5bp.com/s */ box-shadow:none !important; text-shadow: none !important; }
 		a, a:visited { text-decoration: underline; }
