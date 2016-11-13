@@ -1,0 +1,33 @@
+h1 {text-align:center;}
+
+.photobanner {height:300px;width:3300px;margin-bottom:20px;margin-top:20px;}
+.first {-webkit-animation: bannermove 30s linear infinite;
+       -moz-animation: bannermove 30s linear infinite;
+        -ms-animation: bannermove 30s linear infinite;
+         -o-animation: bannermove 30s linear infinite;
+            animation: bannermove 30s linear infinite;}
+.photobanner img {
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;}
+.photobanner img:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    cursor: pointer;
+    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);}
+
+@keyframes "bannermove" {0% {margin-left: 0px;}100% {margin-left: -1460px;}}
+@-moz-keyframes bannermove {0% {margin-left: 0px;}100% {margin-left: -1460px;}}
+@-webkit-keyframes "bannermove" {0% {margin-left: 0px;}100% {margin-left: -1460px;}}
+@-ms-keyframes "bannermove" {0%{margin-left: 0px;}100% {margin-left: -1460px;}}
+@-o-keyframes "bannermove" {0% {margin-left: 0px;}100% {margin-left: -1460px;}}
+#container {width: 100%;overflow: hidden;margin: 50px auto;background: #FFFFFF;}
